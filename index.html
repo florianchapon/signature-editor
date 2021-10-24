@@ -12,20 +12,53 @@
 <body>
 
 <!-- Parameters -->
-<div class="container">
-	<div class="row">
-		<div class="col-sm">
-			Parameters<br/>
-			<form>
-				  <input type="text" id="photo" class="form-control col-sm-2 mb-2" placeholder="Photo url">
-				  <input type="text" id="name" class="form-control col-sm-2 mb-2" placeholder="Name">
-				  <input type="text" id="job" class="form-control col-sm-2 mb-2" placeholder="Job">
-				  <input type="text" id="address1" class="form-control col-sm-2 mb-2" placeholder="Address line 1">
-				  <input type="text" id="address2" class="form-control col-sm-2 mb-2" placeholder="Address line 2">
-				  <input type="text" id="mail" class="form-control col-sm-2 mb-2" placeholder="E-mail">
-				  <input type="text" id="phone" class="form-control col-sm-2 mb-2" placeholder="Phone">
-			</form>
-		</div>
+<div class="jumbotron bg-dark text-light">
+	<div class="container">
+			<h4 class="mb-3" data-toggle="collapse" aria-expanded="false" href="#collapseparameters" aria-controls="collapseExample">Parameters <i class="fas fa-angle-down rotate-icon"></i></h4>
+			<div class="collapse show" id="collapseparameters">
+				<div class="row">
+					<div class="col-lg-6 mb-2">
+						<label>Name</label>
+						<input type="text" id="name" class="form-control">
+					</div>
+					<div class="col-lg-6 mb-2">
+						<label>Job title</label>
+						<input type="text" id="job" class="form-control">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12 mb-2">
+						<label>Photo url</label>
+						<input type="text" id="photo" class="form-control">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 mb-2">
+						<label>Address line 1</label>
+						<input type="text" id="address1" class="form-control" placeholder="1234 Main street">
+					</div>
+					<div class="col-lg-6 mb-2">
+						<label>Address line 2</label>
+						<input type="text" id="address2" class="form-control" placeholder="38000, Grenoble">
+					</div>	
+				</div>
+				<div class="row">
+					<div class="col-lg-6 mb-2">
+						<label>E-mail</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">@</span>
+							</div>
+
+							<input type="text" id="mail" class="form-control" placeholder="you@example.com">
+						</div>
+					</div>
+					<div class="col-lg-6 mb-2">
+						<label>Phone</label>
+						<input type="text" id="phone" class="form-control" placeholder="06.XX.XX.XX.XX">
+					</div>
+				</div>	
+		</div>	
 	</div>
 </div>
 
@@ -65,71 +98,113 @@
 <!-- Preview -->
 <div class="container">
 	<div class="row">
-		<!-- Template 1 -->
-		<div class="col-sm pb-3">
-			<table id="template1" style="font-family: arial; font-size:10pt">
-				<tr>
-					<td rowspan="5" style="vertical-align:top; border-right: 3px solid #2196f3; padding-right:25px;">
-						<img id="photo" class="photoset" src="https://media-exp1.licdn.com/dms/image/C4E03AQFcfCUt0Dqg1w/profile-displayphoto-shrink_200_200/0/1552575850308?e=1640217600&v=beta&t=BeL6MG-GASvs5HilhCkP7M1fDejT1uXhJ4vQ8UyWJMI" width="100px" style="border-radius:500px"/>
-					</td>
-				</tr>
-				<tr>
-					<td style="padding-left: 25px;">
-						<span style="font-weight:bold; font-size:13pt; color:#2196f3;" id="nameset" class="nameset">Florian CHAPON-ROUX</span><br/>
-						<span id="jobset" class="jobset">Product manager</span><br/><hr style="margin:0.5rem 0"/>
-					</td>
-				</tr>
-				<tr>
-					<td style="padding-left: 25px;padding-bottom:10px;">
-						<span id="address1" class="address1set">Address line 1</span><br/>
-						<span id="address2" class="address2set">Address line 2</span>
-					</td>
-				</tr>
-				<tr>
-					<td style="padding-left: 25px; color:#2196f3;">
-						<span style="padding-right:10px;"><i class="fas fa-envelope" style="padding-right:5px;"></i><a id="mail" class="mailset" href="mailto:chapon.florian@gmail.com" style="text-decoration:none; color:#2196f3;">chapon.florian@gmail.com</a></span>
-						<span><i class="fas fa-phone" style="padding-right:5px;"></i><span id="phoneset" class="phoneset">06 XX XX XX XX</span></span>
-					</td>
-				</tr>
-			</table>
+		<div class="col-lg-6 pb-3">
+				<!-- Card -->
+				<div class="card mb-4 box-shadow">
+					<div class="card-header">
+						<div class="row">
+							<div class="col-lg-6">
+								<h5>Signature 1</h5>
+							</div>
+							<div class="col-lg-6 text-right">
+								<button onclick="copyclipboard(template1)" class="btn btn-outline-dark">Copy</button>
+							</div>
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="row">
+							<!-- Template 1 -->
+							<div class="col pb-3">
+								<table id="template1" style="font-family: arial; font-size:10pt">
+									<tr>
+										<td rowspan="5" style="vertical-align:top; border-right: 3px solid #2196f3; padding-right:25px;">
+											<img id="photo" class="photoset" src="https://media-exp1.licdn.com/dms/image/C4E03AQFcfCUt0Dqg1w/profile-displayphoto-shrink_200_200/0/1552575850308?e=1640217600&v=beta&t=BeL6MG-GASvs5HilhCkP7M1fDejT1uXhJ4vQ8UyWJMI" width="100px" style="border-radius:500px"/>
+										</td>
+									</tr>
+									<tr>
+										<td style="padding-left: 25px;">
+											<span style="font-weight:bold; font-size:13pt; color:#2196f3;" id="nameset" class="nameset">Florian CHAPON-ROUX</span><br/>
+											<span id="jobset" class="jobset">Product manager</span><br/><hr style="margin:0.5rem 0"/>
+										</td>
+									</tr>
+									<tr>
+										<td style="padding-left: 25px;padding-bottom:10px;">
+											<span id="address1" class="address1set">Address line 1</span><br/>
+											<span id="address2" class="address2set">Address line 2</span>
+										</td>
+									</tr>
+									<tr>
+										<td style="padding-left: 25px; color:#2196f3;">
+											<span style="padding-right:10px;"><i class="fas fa-envelope" style="padding-right:5px;"></i><a id="mail" class="mailset" href="mailto:chapon.florian@gmail.com" style="text-decoration:none; color:#2196f3;">chapon.florian@gmail.com</a></span>
+											<span><i class="fas fa-phone" style="padding-right:5px;"></i><span id="phoneset" class="phoneset">06 XX XX XX XX</span></span>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div><!-- End card-->
+				</div>
 		</div>
-		<!-- Template 2 -->
-		<div class="col-sm pb-3">
-			<table id="template2" style="font-family: arial; font-size:10pt">
-				<tr>
-					<td colspan="2">
-						<span style="font-weight:bold; font-size:13pt; color:#2196f3;" class="nameset">Florian CHAPON-ROUX</span><br/>
-						<span id="job" class="jobset">Product manager</span><br/><hr style="margin:0.5rem 0"/>
-					</td>
-				</tr>
-				<tr>
-					<td rowspan="6">
-						<img id="photo" class="photoset" src="https://media-exp1.licdn.com/dms/image/C4E03AQFcfCUt0Dqg1w/profile-displayphoto-shrink_200_200/0/1552575850308?e=1640217600&v=beta&t=BeL6MG-GASvs5HilhCkP7M1fDejT1uXhJ4vQ8UyWJMI" width="100px"/>
-					</td>
-				</tr>
-				<tr>
-					<td style="padding-left: 25px; color:#2196f3; padding-bottom:2.5px;">
-						<span style="padding-right:10px;"><i class="fas fa-envelope" style="padding-right:5px;"></i><a id="mail" class="mailset" href="mailto:chapon.florian@gmail.com" style="text-decoration:none; color:#2196f3;">chapon.florian@gmail.com</a></span><br/>
-					</td>
-				</tr>
-				<tr>
-					<td style="padding-left: 25px; color:#2196f3; padding-bottom:2.5px;">						
-						<span><i class="fas fa-phone" style="padding-right:5px;"></i><span id="phone" class="phoneset">06 XX XX XX XX</span></span>
-					</td>
-				</tr>
-				<tr>
-					<td style="padding-left: 25px; padding-bottom:2.5px;">
-						<span id="address1"class="address1set">Address line 1</span><br/>
-					</td>
-				</tr>
-				<tr>
-					<td style="padding-left: 25px;padding-bottom:2.5px;">
-						<span id="address2" class="address2set">Address line 2</span>
-					</td>
-				</tr>
-			</table>
+		<div class="col-lg-6 pb-3">
+			<div class="container">
+				<!-- Card -->
+				<div class="card mb-4 box-shadow">
+					<div class="card-header">
+						<div class="row">
+							<div class="col-lg-6">
+								<h5>Signature 2</h5>
+							</div>
+							<div class="col-lg-6 text-right">
+								<button onclick="copyclipboard(template2)" class="btn btn-outline-dark">Copy</button>
+							</div>
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="row">
+							<!-- Template 2 -->
+							<div class="col pb-3">
+								<table id="template2" style="font-family: arial; font-size:10pt">
+									<tr>
+										<td colspan="2">
+											<span style="font-weight:bold; font-size:13pt; color:#2196f3;" class="nameset">Florian CHAPON-ROUX</span><br/>
+											<span id="job" class="jobset">Product manager</span><br/><hr style="margin:0.5rem 0"/>
+										</td>
+									</tr>
+									<tr>
+										<td rowspan="6">
+											<img id="photo" class="photoset" src="https://media-exp1.licdn.com/dms/image/C4E03AQFcfCUt0Dqg1w/profile-displayphoto-shrink_200_200/0/1552575850308?e=1640217600&v=beta&t=BeL6MG-GASvs5HilhCkP7M1fDejT1uXhJ4vQ8UyWJMI" width="100px"/>
+										</td>
+									</tr>
+									<tr>
+										<td style="padding-left: 25px; color:#2196f3; padding-bottom:2.5px;">
+											<span style="padding-right:10px;"><i class="fas fa-envelope" style="padding-right:5px;"></i><a id="mail" class="mailset" href="mailto:chapon.florian@gmail.com" style="text-decoration:none; color:#2196f3;">chapon.florian@gmail.com</a></span><br/>
+										</td>
+									</tr>
+									<tr>
+										<td style="padding-left: 25px; color:#2196f3; padding-bottom:2.5px;">						
+											<span><i class="fas fa-phone" style="padding-right:5px;"></i><span id="phone" class="phoneset">06 XX XX XX XX</span></span>
+										</td>
+									</tr>
+									<tr>
+										<td style="padding-left: 25px; padding-bottom:2.5px;">
+											<span id="address1"class="address1set">Address line 1</span><br/>
+										</td>
+									</tr>
+									<tr>
+										<td style="padding-left: 25px;padding-bottom:2.5px;">
+											<span id="address2" class="address2set">Address line 2</span>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div><!-- End card -->	
+
+			</div>	
 		</div>		
 	</div>
+	<!--
 	<div class="row">
 		<div class="col-sm">
 			<button onclick="copyclipboard(template1)" class="btn btn-outline-dark">Copy</button>	
@@ -138,6 +213,7 @@
 			<button onclick="copyclipboard(template2)" class="btn btn-outline-dark">Copy</button>
 		</div>
 	</div>
+	-->
 </div>
 
 
