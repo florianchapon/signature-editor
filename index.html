@@ -1,0 +1,149 @@
+<html>
+<head>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<!-- Font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<title></title>
+<body>
+
+<!-- Parameters -->
+<div class="container">
+	<div class="row">
+		<div class="col-sm">
+			Parameters<br/>
+			<form>
+				  <input type="text" id="photo" class="form-control col-sm-2 mb-2" placeholder="Photo url">
+				  <input type="text" id="name" class="form-control col-sm-2 mb-2" placeholder="Name">
+				  <input type="text" id="job" class="form-control col-sm-2 mb-2" placeholder="Job">
+				  <input type="text" id="address1" class="form-control col-sm-2 mb-2" placeholder="Address line 1">
+				  <input type="text" id="address2" class="form-control col-sm-2 mb-2" placeholder="Address line 2">
+				  <input type="text" id="mail" class="form-control col-sm-2 mb-2" placeholder="E-mail">
+				  <input type="text" id="phone" class="form-control col-sm-2 mb-2" placeholder="Phone">
+			</form>
+		</div>
+	</div>
+</div>
+
+
+<script>
+	$(":input").keyup(function() {
+		
+		var id = $(this).attr("id");
+		var idset = id+"set";
+	
+		if ($(this).attr("id") == "photo") {
+			$("."+idset).attr("src", $("#"+id).val());
+		}
+		
+		else if ($(this).attr("id") == "mail") {
+			$("."+idset).attr("href", "mailto:"+$("#"+id).val());
+			$("."+idset).html($("#"+id).val());
+		}
+		
+		else {
+			$("."+idset).html($("#"+id).val());
+		}
+	});	
+	
+	
+	function copyclipboard(containerid) {
+	  var range = document.createRange();
+	  range.selectNode(containerid); //changed here
+	  window.getSelection().removeAllRanges(); 
+	  window.getSelection().addRange(range); 
+	  document.execCommand("copy");
+	  window.getSelection().removeAllRanges();
+	}
+	
+</script>
+
+<!-- Preview -->
+<div class="container">
+	<div class="row">
+		<!-- Template 1 -->
+		<div class="col-sm pb-3">
+			<table id="template1" style="font-family: arial; font-size:10pt">
+				<tr>
+					<td rowspan="5" style="vertical-align:top; border-right: 3px solid #2196f3; padding-right:25px;">
+						<img id="photo" class="photoset" src="https://media-exp1.licdn.com/dms/image/C4E03AQFcfCUt0Dqg1w/profile-displayphoto-shrink_200_200/0/1552575850308?e=1640217600&v=beta&t=BeL6MG-GASvs5HilhCkP7M1fDejT1uXhJ4vQ8UyWJMI" width="100px" style="border-radius:500px"/>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-left: 25px;">
+						<span style="font-weight:bold; font-size:13pt; color:#2196f3;" id="nameset" class="nameset">Florian CHAPON-ROUX</span><br/>
+						<span id="jobset" class="jobset">Product manager</span><br/><hr style="margin:0.5rem 0"/>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-left: 25px;padding-bottom:10px;">
+						<span id="address1" class="address1set">Address line 1</span><br/>
+						<span id="address2" class="address2set">Address line 2</span>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-left: 25px; color:#2196f3;">
+						<span style="padding-right:10px;"><i class="fas fa-envelope" style="padding-right:5px;"></i><a id="mail" class="mailset" href="mailto:chapon.florian@gmail.com" style="text-decoration:none; color:#2196f3;">chapon.florian@gmail.com</a></span>
+						<span><i class="fas fa-phone" style="padding-right:5px;"></i><span id="phoneset" class="phoneset">06 XX XX XX XX</span></span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<!-- Template 2 -->
+		<div class="col-sm pb-3">
+			<table id="template2" style="font-family: arial; font-size:10pt">
+				<tr>
+					<td colspan="2">
+						<span style="font-weight:bold; font-size:13pt; color:#2196f3;" class="nameset">Florian CHAPON-ROUX</span><br/>
+						<span id="job" class="jobset">Product manager</span><br/><hr style="margin:0.5rem 0"/>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="6">
+						<img id="photo" class="photoset" src="https://media-exp1.licdn.com/dms/image/C4E03AQFcfCUt0Dqg1w/profile-displayphoto-shrink_200_200/0/1552575850308?e=1640217600&v=beta&t=BeL6MG-GASvs5HilhCkP7M1fDejT1uXhJ4vQ8UyWJMI" width="100px"/>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-left: 25px; color:#2196f3; padding-bottom:2.5px;">
+						<span style="padding-right:10px;"><i class="fas fa-envelope" style="padding-right:5px;"></i><a id="mail" class="mailset" href="mailto:chapon.florian@gmail.com" style="text-decoration:none; color:#2196f3;">chapon.florian@gmail.com</a></span><br/>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-left: 25px; color:#2196f3; padding-bottom:2.5px;">						
+						<span><i class="fas fa-phone" style="padding-right:5px;"></i><span id="phone" class="phoneset">06 XX XX XX XX</span></span>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-left: 25px; padding-bottom:2.5px;">
+						<span id="address1"class="address1set">Address line 1</span><br/>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding-left: 25px;padding-bottom:2.5px;">
+						<span id="address2" class="address2set">Address line 2</span>
+					</td>
+				</tr>
+			</table>
+		</div>		
+	</div>
+	<div class="row">
+		<div class="col-sm">
+			<button onclick="copyclipboard(template1)" class="btn btn-outline-dark">Copy</button>	
+		</div>
+		<div class="col-sm">
+			<button onclick="copyclipboard(template2)" class="btn btn-outline-dark">Copy</button>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+</body>
+</html>
